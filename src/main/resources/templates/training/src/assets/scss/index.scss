@@ -1,0 +1,112 @@
+@mixin height_widthscope($height: 30px,$width: 130px){
+  height: $height;
+  width: $width;
+}
+
+@mixin marginscope($margin-left: 10px,$margin-right: 10px) {
+  margin-left: $margin-left;
+  margin-right: $margin-right;
+}
+
+.header-modal {
+  color: #f60;
+  text-align: center;
+}
+.text-modal {
+  text-align: center;
+}
+.container {
+  padding-bottom: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
+  background-color: white;
+
+  .color-style {
+    background-color: white;
+    border-top: 3px solid skyblue;
+
+    .pull-right-div {
+      position: relative;
+      left: -10px;
+    }
+    p {
+      margin-left: 10px;
+    }
+    .top-hr {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      border-top:0.5px solid #d8d8d8;
+    }
+    .middle-hr {
+      margin-top: 5px;
+      border-top:0.5px solid #d8d8d8;
+    }
+    .bottom-hr {
+      margin-top: -20px;
+      border-top:0.5px solid #d8d8d8;
+    }
+    .pad-style {
+      padding-top: 5px;
+      padding-bottom: 5px;
+
+      .div-float {
+        float: right;
+        margin-right: 15px;
+        padding: 0px;
+        @include height_widthscope(30px,90px);
+      }
+      span {
+        @include marginscope();
+      }
+
+      .hwstyle {
+        width: 8%;
+        height: 32px;
+        border: 1px solid #ccc;
+        border-radius:5px;
+      }
+      .date-div {
+        display:inline-block;
+      }
+      div.date-picker {
+         width: 115px;
+         display: inline-block;
+      }
+
+      .hw_button {
+        position: relative;
+        right: 15px;
+        @include height_widthscope(30px,90px);
+        span {
+          @include marginscope(0px,0px);
+        }
+      }
+    }
+    table
+      .width-th {
+          width: 100px;
+      }
+      .width-id {
+        width:50px;
+      }
+      .width-style {
+        width:100px;
+      }
+      tr:hover {
+      .pencil-color {
+        color: #2292DD;
+      }
+      .trash-color {
+        color: #E6421A;
+      }
+    }
+    .icon-color {
+      color:#666666;
+    }
+
+    .jump-text {
+      width:70px;
+      @include marginscope(10px,10px);
+    }
+  }
+}

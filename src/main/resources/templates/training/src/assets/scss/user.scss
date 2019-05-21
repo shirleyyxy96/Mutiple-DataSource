@@ -1,0 +1,65 @@
+@mixin height_widthscope($height: 30px,$width: 130px) {
+  height: $height;
+  width: $width;
+}
+
+@mixin marginscope($margin-top: 10px,$margin-bottom: 10px) {
+  margin-top: $margin-top;
+  margin-bottom: $margin-bottom;
+}
+
+.container {
+  padding-bottom: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+  background-color: white;
+
+  .color-style {
+    background-color: white;
+    border-top: 3px solid skyblue;
+    overflow: hidden;
+    h3 {
+      margin-left: 15px;
+      @include marginscope();
+    }
+    hr {
+      margin-top: 5px;
+      margin-bottom: 20px;
+      border-top:0.5px solid #e5e5e5;
+    }
+    form {
+      position: relative;
+      left:150px;
+
+      label {
+          margin-left: 10px;
+          margin-right: 10px;
+      }
+      .birthdate-div {
+        margin-bottom:10px;
+      }
+      .h_wstyle_user {
+        border-radius:5px;
+        @include height_widthscope(32px,200px);
+        border: 1px solid #ccc;
+      }
+
+      .label-style {
+        margin-left:-30px;
+        display:block;
+        float:left;
+        width:74px;
+      }
+
+      div.date-picker {
+        @include height_widthscope(32px,200px);
+        float: left;
+      }
+    }
+    .button-style {
+      @include height_widthscope(32px,100px);
+      border: 1px solid #ccc;
+      margin-left: 15px;
+    }
+  }
+}

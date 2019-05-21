@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.augmentum.mediacloud</groupId>
+  <artifactId>Training</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <!-- Maven工程的父工程依赖？ -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.2.RELEASE</version>
+    </parent>
+    <properties>
+     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--thymeleaf模板jar，是html数据传递取值，类似jsp的jstl -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <!-- 对json数据的操作 -->
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- 简化程序与数据库交互的代码，
+        spring提供了一个现成的dao层框架，
+        spring家族提供的spring-data适用于关系型数据库和nosql数据库 ；
+         -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>       
+            <groupId>com.alibaba</groupId>       
+            <artifactId>fastjson</artifactId>       
+            <version>1.2.33</version>     
+       </dependency>
+    </dependencies>
+</project>
+
+<!-- scope 说明
+               - compile ：默认范围，用于编译 
+               - provided：类似于编译，但支持你期待jdk或者容器提供，类似于classpath 
+               - runtime: 在执行时，需要使用 
+               - test:    用于test任务时使用 
+               - system: 需要外在提供相应得元素。通过systemPath来取得 
+               - systemPath: 仅用于范围为system。提供相应的路径 
+               - optional:   标注可选，当项目自身也是依赖时。用于连续依赖时使用
+-->
